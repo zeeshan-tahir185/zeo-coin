@@ -1,26 +1,37 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+  font-family: "Mulish", sans-serif;
+}
+.hero_bg{
+  background: url('/images/home/hero_bg.svg') ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+.prog_color{
+  background: linear-gradient(90deg, #FFFFFF 1.57%, #FA825D 58.94%, #E23E3A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+}
+.mask_bg {
+  background: 
+    linear-gradient(to right, #30063E, #1A2053), /* bottom wala */
+    conic-gradient(
+      from -72.04deg at 72.64% 50%, 
+      #400D40 -171deg, 
+      #120536 8.98deg, 
+      #400D40 189deg, 
+      #120536 368.98deg
+    ); /* full screen wala */
+
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 200px, cover; /* linear 200px height, conic full */
+  background-position: bottom, center; /* linear bottom stick, conic center */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+.roadmap_bg{
+  background: linear-gradient(90deg, #230636 -1.27%, #0A1646 101.55%);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
