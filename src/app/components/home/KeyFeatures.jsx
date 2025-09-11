@@ -98,7 +98,7 @@ const KeyFeatures = () => {
   }, [currentIndex, totalCards]);
 
   return (
-    <div className="mask_bg">
+    <div className="mask_bg" id="key-features">
       <div className="max-w-[1440px] mx-auto w-full py-16 pl-6 md:pl-16 pr-6 md:pr-0 flex flex-col md:flex-row items-start gap-10 overflow-hidden">
         {/* Left Heading */}
         <div className="w-full md:w-1/4 text-white mt-0 md:mt-[150px]">

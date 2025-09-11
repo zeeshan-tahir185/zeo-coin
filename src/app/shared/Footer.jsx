@@ -21,15 +21,15 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="flex gap-5 mt-4 flex-wrap justify-center md:justify-start">
-              <img src="/images/home/icon1.png" alt="icon1" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" />
-              <img src="/images/home/icon2.png" alt="icon2" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" />
-              <img src="/images/home/icon3.png" alt="icon3" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" />
-              <img src="/images/home/icon4.png" alt="icon4" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" />
-              <img src="/images/home/icon5.png" alt="icon5" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" />
-              <img src="/images/home/icon6.png" alt="icon6" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" />
-              <img src="/images/home/icon7.png" alt="icon7" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" />
-              <img src="/images/home/icon8.png" alt="icon8" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" />
-              <img src="/images/home/icon9.png" alt="icon9" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" />
+               <a target="_blank" href="https://x.com/ZeoSuperApp"><img src="/images/home/icon1.png" alt="icon1" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" /></a>
+        <a target="_blank" href="https://t.me/ZeoSuperApp"><img src="/images/home/icon2.png" alt="icon2" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" /></a>
+        <a target="_blank" href="https://www.reddit.com/r/ZeoSuperApp/"><img src="/images/home/icon3.png" alt="icon3" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" /></a>
+        <a target="_blank" href="https://www.instagram.com/zeosuperapp/"> <img src="/images/home/icon4.png" alt="icon4" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" /></a>
+        <a target="_blank" href="https://www.facebook.com/ZeoSuperApp"><img src="/images/home/icon5.png" alt="icon5" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" /></a>
+        <a target="_blank" href="https://medium.com/zeosuperapp"><img src="/images/home/icon6.png" alt="icon6" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" /></a>
+        <a target="_blank" href="https://www.linkedin.com/company/zeosuperapp/"><img src="/images/home/icon7.png" alt="icon7" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" /></a>
+        <a target="_blank" href="https://www.youtube.com/@ZeoSuperApp"><img src="/images/home/icon8.png" alt="icon8" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" /></a>
+        <a target="_blank" href="https://discord.gg/F6RY2Ywup4"> <img src="/images/home/icon9.png" alt="icon9" className="w-[32px] h-[32px] cursor-pointer hover:opacity-70" /></a>
             </div>
           </div>
 
