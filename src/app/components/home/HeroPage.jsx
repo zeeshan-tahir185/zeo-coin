@@ -2,7 +2,7 @@ import React from "react";
 
 const HeroPage = () => {
   return (
-    <div className="hero_bg w-full min-h-[959px] pt-[98px] flex flex-col gap-[50px] md:gap-[130px] justify-center items-center pb-[50px] md:pb-0">
+    <div className="hero_bg w-full min-h-[950px] pt-[98px] flex flex-col gap-[50px] md:gap-[130px] justify-center items-center pb-[50px] md:pb-0">
       <div className="flex flex-col lg:flex-row gap-[50px] justify-between items-center px-[20px] lg:px-[65px] max-w-[1440px] mx-auto">
         <div className="flex flex-col gap-[30px] sm:gap-[60px] w-full lg:w-[50%] items-center lg:items-start text-center lg:text-left">
           <h1 className="text-3xl md:text-7xl font-extrabold text-white">
