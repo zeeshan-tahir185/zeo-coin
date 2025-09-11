@@ -1,10 +1,10 @@
 import React from 'react'
-import ClaimStaking from '../components/ClaimStaking'
+import ComingSoon from '../components/ComingSoon'
 
 const page = () => {
   return (
     <div>
-      <ClaimStaking />
+      <ComingSoon />
     </div>
   )
 }

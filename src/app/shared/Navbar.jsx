@@ -120,7 +120,7 @@ const Navbar = () => {
             )}
           </div>
           <Link 
-            href="/claim-staking" 
+            href="/coming-soon" 
             className={`relative h-full flex justify-center items-center ${activeLink === '/claim-staking' ? ' !font-bold text-sm xl:text-lg' : 'text-[#FFFFFF] text-xs xl:text-base !font-light'}`} 
             onClick={() => setActiveLink('/claim-staking')}>
             Claim & Staking
@@ -209,7 +209,7 @@ const Navbar = () => {
             )}
           </div>
           <Link 
-            href="/claim-staking" 
+            href="/coming-soon" 
             className="block text-xl text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
             onClick={() => { setActiveLink('/claim-staking'); setIsMobileMenuOpen(false); }}>
             Claim & Staking
