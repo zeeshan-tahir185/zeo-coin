@@ -16,18 +16,6 @@ const features = [
     desc: "Zeo Coin powers loyalty and growth. Users earn tokens from group purchases, while staking and token burning enhance long-term value. Offering stability with upside potential, Zeo Coin delivers real-time utility, turning every transaction into both a reward and investment.",
   },
   {
-    title: ["Social", "Commerce"],
-    desc: "Zeo makes shopping social. Buyers join with friends, communities, or AI agents to negotiate directly with sellers. This group-buying model unlocks better prices, higher engagement, and faster conversions, creating a win-win marketplace where everyone benefits from collective power.",
-  },
-  {
-    title: ["AI", "Agents"],
-    desc: "AI agents shop on behalf of users, analyzing preferences, comparing offers, and negotiating with seller-side agents. They deliver personalized deals, save time, and ensure smarter purchases, while sellers benefit from reliable demand, faster sales, and actionable insights that improve conversion rates.",
-  },
-  {
-    title: ["Progressive", "Coin"],
-    desc: "Zeo Coin powers loyalty and growth. Users earn tokens from group purchases, while staking and token burning enhance long-term value. Offering stability with upside potential, Zeo Coin delivers real-time utility, turning every transaction into both a reward and investment.",
-  },
-  {
     title: ["Payments", "& Remittances"],
     desc: "The Zeo Wallet enables seamless digital payments and remittances. Users can transfer funds, redeem rewards, or pay for services effortlessly. Combining blockchain rewards with secure transactions, it reduces friction, builds trust, and powers the financial backbone of the Zeo ecosystem.",
   },
