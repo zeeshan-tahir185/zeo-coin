@@ -37,9 +37,9 @@ const Footer = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 flex-1 justify-items-center md:justify-items-start">
             <a href="#" className="hover:text-gray-400">About Us</a>
             <a href="#" className="hover:text-gray-400">FAQ</a>
-            <a href="#" className="hover:text-gray-400">Blog</a>
-            <a href="#" className="hover:text-gray-400">Whitepaper</a>
-            <a href="#" className="hover:text-gray-400">Contact Us</a>
+            <a href="https://medium.com/zeosuperapp" target="_blank" className="hover:text-gray-400">Blog</a>
+            <a href="https://excelli.gitbook.io/zeo" target="_blank" className="hover:text-gray-400">Whitepaper</a>
+            <a href="/#contact" className="hover:text-gray-400">Contact Us</a>
           </div>
         </div>
 

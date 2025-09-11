@@ -14,7 +14,7 @@ const HeroPage = () => {
             <span className="prog_color"> Progressive </span>Crypto Token for AI Agents & Social Commerce
           </h2>
           <button className="w-full sm:w-[186px] h-[48px] rounded-[36px] bg-white text-sm text-[#4C1F59] font-semibold">
-            White Paper
+            <a href="https://excelli.gitbook.io/zeo" target="_blank"> White Paper</a>
           </button>
           <div className="flex items-center gap-[10px] sm:gap-[40px] mx-auto flex-col sm:flex-row md:mx-0 ">
             <img src="/images/home/app1.svg" className="" alt="" />
