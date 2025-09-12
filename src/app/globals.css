@@ -45,3 +45,6 @@
 #roadmap{
   scroll-margin-top: 85px;
 }
+.user-select-none {
+  user-select: none;
+}

@@ -104,7 +104,7 @@ const Navbar = () => {
           </Link>
           <div className="relative h-full flex justify-center items-center" onMouseEnter={toggleLegalDropdown} onMouseLeave={toggleLegalDropdown}>
             <Link 
-              href="/#legal" 
+              href="#" 
               className={`cursor-pointer relative h-full flex justify-center items-center ${activeLink === '/legal' ? ' !font-bold text-sm xl:text-lg' : 'text-[#FFFFFF] text-xs xl:text-base !font-light'}`} 
               onClick={() => setActiveLink('/legal')}>
               Legal
@@ -141,63 +141,63 @@ const Navbar = () => {
       {/* Mobile Menu Dropdown with Animation */}
       {isMobileMenuOpen && (
         <div
-          className="md:hidden bg-black min-h-[calc(100vh-88px)] flex flex-col justify-start gap-[10px] absolute top-[88px] left-0 w-full text-center border-t border-gray-500"
+          className="md:hidden bg-black min-h-[calc(100vh-88px)] flex flex-col justify-start gap-[5px] absolute top-[88px] left-0 w-full text-center border-t border-gray-500"
           
         >
           <Link 
             href="/#home" 
-            className="block text-xl text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
+            className="block text-base text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
             onClick={() => { setActiveLink('/'); setIsMobileMenuOpen(false); }}>
             Home
           </Link>
           <Link 
             href="/#buy-coins" 
-            className="block text-xl text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
+            className="block text-base text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
             onClick={() => { setActiveLink('/buy-coins'); setIsMobileMenuOpen(false); }}>
             Buy Coins
           </Link>
           <Link 
             href="/#referral" 
-            className="block text-xl text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
+            className="block text-base text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
             onClick={() => { setActiveLink('/referral'); setIsMobileMenuOpen(false); }}>
             Referral
           </Link>
           
           <Link 
             href="/#about-us" 
-            className="block text-xl text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
+            className="block text-base text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
             onClick={() => { setActiveLink('/about-us'); setIsMobileMenuOpen(false); }}>
             About Us
           </Link>
           <Link 
             href="/#key-features" 
-            className="block text-xl text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
+            className="block text-base text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
             onClick={() => { setActiveLink('/key-features'); setIsMobileMenuOpen(false); }}>
             Key Features
           </Link>
           <Link 
             href="/#tokenomics" 
-            className="block text-xl text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
+            className="block text-base text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
             onClick={() => { setActiveLink('/tokenomics'); setIsMobileMenuOpen(false); }}>
             Tokenomics
           </Link>
           <Link 
             href="/#roadmap" 
-            className="block text-xl text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
+            className="block text-base text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
             onClick={() => { setActiveLink('/roadmap'); setIsMobileMenuOpen(false); }}>
             Roadmap
           </Link>
           
           <Link 
             href="/faq" 
-            className="block text-xl text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
+            className="block text-base text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
             onClick={() => { setActiveLink('/faq'); setIsMobileMenuOpen(false); }}>
             FAQ
           </Link>
           <div className="relative" onClick={toggleLegalDropdown}>
             <Link 
-              href="/#legal" 
-              className="block text-xl text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
+              href="s#" 
+              className="block text-base text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
               onClick={() => { setActiveLink('/legal');  }}>
               Legal
             </Link>
@@ -210,7 +210,7 @@ const Navbar = () => {
           </div>
           <Link 
             href="/coming-soon" 
-            className="block text-xl text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
+            className="block text-base text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
             onClick={() => { setActiveLink('/claim-staking'); setIsMobileMenuOpen(false); }}>
             Claim & Staking
           </Link>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 const features = [
@@ -35,6 +35,10 @@ const KeyFeatures = () => {
 
   const totalCards = extendedFeatures.length;
 
+  // swipe/drag tracking
+  const startX = useRef(0);
+  const isDragging = useRef(false);
+
   // Update card width based on screen size
   useEffect(() => {
     const updateWidth = () => {
@@ -50,16 +54,14 @@ const KeyFeatures = () => {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
-
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 3000); // 3 seconds me ek slide aage
+    }, 3000); // 3 seconds
 
-    return () => clearInterval(interval); // cleanup on unmount
+    return () => clearInterval(interval);
   }, [currentIndex]);
 
-  
   const prevSlide = () => {
     setCurrentIndex((prev) => prev - 1);
     setIsTransitioning(true);
@@ -76,14 +78,59 @@ const KeyFeatures = () => {
       setTimeout(() => {
         setIsTransitioning(false);
         setCurrentIndex(currentIndex - features.length);
-      }, 500); // Match transition duration
+      }, 500);
     } else if (currentIndex < features.length) {
       setTimeout(() => {
         setIsTransitioning(false);
         setCurrentIndex(currentIndex + features.length);
-      }, 500); // Match transition duration
+      }, 500);
     }
   }, [currentIndex, totalCards]);
+
+  // drag/swipe handlers
+  const handleTouchStart = (e) => {
+    isDragging.current = true;
+    startX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging.current) return;
+    const diff = e.touches[0].clientX - startX.current;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        prevSlide();
+      } else {
+        nextSlide();
+      }
+      isDragging.current = false;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    isDragging.current = false;
+  };
+
+  const handleMouseDown = (e) => {
+    isDragging.current = true;
+    startX.current = e.clientX;
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging.current) return;
+    const diff = e.clientX - startX.current;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        prevSlide();
+      } else {
+        nextSlide();
+      }
+      isDragging.current = false;
+    }
+  };
+
+  const handleMouseUp = () => {
+    isDragging.current = false;
+  };
 
   return (
     <div className="mask_bg" id="key-features">
@@ -97,13 +144,20 @@ const KeyFeatures = () => {
         </div>
 
         {/* Right Carousel */}
-        <div className="w-full md:w-3/4 relative overflow-hidden">
+        <div
+          className="w-full md:w-3/4 relative overflow-hidden user-select-none"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+        >
           {/* Cards Container */}
           <div
             className={`flex ${
-              isTransitioning
-                ? "transition-transform duration-500 ease-in-out"
-                : ""
+              isTransitioning ? "transition-transform duration-500 ease-in-out" : ""
             }`}
             style={{
               transform: `translateX(-${currentIndex * cardWidth}px)`,
@@ -114,10 +168,9 @@ const KeyFeatures = () => {
                 key={index}
                 className="bg-white text-black rounded-md shadow-md py-4 md:pt-[72px] px-[35px] mx-3 flex-shrink-0 h-auto md:h-[610px]"
                 style={{
-                  width: `${cardWidth - 24}px`, // Adjust width dynamically
+                  width: `${cardWidth - 24}px`,
                 }}
               >
-                {/* Custom Heading with Line Breaks */}
                 <h3 className="text-xl md:text-5xl text-[#22304C] font-extrabold mb-2 leading-snug">
                   {item.title.map((line, idx) => (
                     <React.Fragment key={idx}>
@@ -151,9 +204,7 @@ const KeyFeatures = () => {
                 <div
                   key={idx}
                   className={`w-3 h-3 rounded-full ${
-                    idx === currentIndex % features.length
-                      ? "bg-white"
-                      : "bg-gray-500"
+                    idx === currentIndex % features.length ? "bg-white" : "bg-gray-500"
                   }`}
                 ></div>
               ))}
