@@ -195,16 +195,16 @@ const Navbar = () => {
             FAQ
           </Link>
           <div className="relative" onClick={toggleLegalDropdown}>
-            <Link 
-              href="s#" 
+            <span 
+              href="" 
               className="block text-base text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
               onClick={() => { setActiveLink('/legal');  }}>
               Legal
-            </Link>
+            </span>
             {isLegalDropdownOpen && (
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-black border border-blue-500 rounded-lg shadow-lg z-10">
-                <Link href="/privacy-policy" className="block px-4 py-2 text-white hover:bg-gray-700 border-b border-dashed border-blue-500">Privacy Policy</Link>
-                <Link href="/terms-of-use" className="block px-4 py-2 text-white hover:bg-gray-700">Terms Of Use</Link>
+                <Link href="/privacy-policy" onClick={()=>setIsMobileMenuOpen(false)} className="block px-4 py-2 text-white hover:bg-gray-700 border-b border-dashed border-blue-500">Privacy Policy</Link>
+                <Link href="/terms-of-use" onClick={()=>setIsMobileMenuOpen(false)} className="block px-4 py-2 text-white hover:bg-gray-700">Terms Of Use</Link>
               </div>
             )}
           </div>

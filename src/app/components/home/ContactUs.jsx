@@ -16,9 +16,9 @@ const ContactUs = () => {
         //   action="https://formsubmit.co/mrzeeshan185@gmail.com"
 
           method="POST"
-          className=" p-8 rounded-lg shadow-lg"
+          className=" sm:p-8 rounded-lg shadow-lg"
         >
-          <div className="flex gap-4 mb-[32px] flex-col md:flex-row">
+          <div className="flex gap-[32px] md:gap-4 mb-[32px] flex-col md:flex-row">
             <input
               type="text"
               name="firstName"

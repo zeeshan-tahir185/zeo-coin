@@ -166,7 +166,7 @@ const KeyFeatures = () => {
             {extendedFeatures.map((item, index) => (
               <div
                 key={index}
-                className="bg-white text-black rounded-md shadow-md py-4 md:pt-[72px] px-[35px] mx-3 flex-shrink-0 h-auto md:h-[610px]"
+                className="bg-white text-black rounded-md shadow-md py-4 md:pt-[72px] px-[20px] sm:px-[35px] mx-3 flex-shrink-0 h-auto md:h-[610px]"
                 style={{
                   width: `${cardWidth - 24}px`,
                 }}
