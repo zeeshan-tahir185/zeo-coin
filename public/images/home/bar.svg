@@ -1,8 +1,9 @@
 <svg width="520" height="32" viewBox="0 0 520 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 16C0 7.16344 7.16344 0 16 0H107V32H16C7.16345 32 0 24.8366 0 16Z" fill="#D1A03E"/>
+<path d="M0 16C0 7.16344 7.16344 0 16 0H107V32H16C7.16345 32 0 24.8366 0 16Z" fill="white"/>
+<g opacity="0.3">
 <rect x="0.5" y="0.5" width="519" height="31" rx="15.5" stroke="white"/>
-<line x1="30.5" y1="1" x2="30.5" y2="32" stroke="white"/>
-<line x1="68.8333" y1="1" x2="68.8333" y2="32" stroke="white"/>
+<line x1="30.5" y1="1" x2="30.5" y2="32" stroke="#0D042E"/>
+<line x1="68.8333" y1="1" x2="68.8333" y2="32" stroke="#0D042E"/>
 <line x1="107.167" y1="1" x2="107.167" y2="32" stroke="white"/>
 <line x1="145.5" y1="1" x2="145.5" y2="32" stroke="white"/>
 <line x1="183.833" y1="1" x2="183.833" y2="32" stroke="white"/>
@@ -14,4 +15,5 @@
 <line x1="413.833" y1="1" x2="413.833" y2="32" stroke="white"/>
 <line x1="452.167" y1="1" x2="452.167" y2="32" stroke="white"/>
 <line x1="490.5" y1="1" x2="490.5" y2="32" stroke="white"/>
+</g>
 </svg>

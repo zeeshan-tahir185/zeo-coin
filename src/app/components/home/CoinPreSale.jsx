@@ -44,7 +44,7 @@ const CoinPreSale = () => {
               <span className="text-white font-normal">$0.05</span>
             </p>
           </div>
-          <img src="/images/home/bar.svg" alt="" />
+          <img src="/images/home/bar.svg" alt="" draggable="false" />
         </div>
         {/* USD Raised */}
         <p className="text-center text-[#D1A03E] mt-4 text-xl md:text-[32px] font-extrabold">
