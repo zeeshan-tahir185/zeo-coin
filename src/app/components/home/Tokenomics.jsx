@@ -2,7 +2,7 @@ import React from "react";
 
 const Tokenomics = () => {
   return (
-    <div className="w-full flex flex-col relative min-h-[100vh]" id="tokenomics">
+    <div className="w-full flex flex-col relative min-h-[800px]" id="tokenomics">
       {/* Make sure the parent div is relative so that the image positions itself accordingly */}
       <div className=" w-full">
         <img

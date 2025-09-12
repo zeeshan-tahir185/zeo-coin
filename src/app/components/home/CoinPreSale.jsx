@@ -13,7 +13,7 @@ const CoinPreSale = () => {
   ];
 
   return (
-    <div className="bg-[#190941]  w-full min-h-screen flex flex-col gap-[30px] md:gap-[90px] items-center justify-center py-[30px] md:py-[90px]" >
+    <div className="bg-[#190941]  w-full min-h-[1000px] flex flex-col gap-[30px] md:gap-[90px] items-center justify-center py-[30px] md:py-[90px]" >
       <div id="buy-coins"
         className="w-[95%] md:w-[600px] min-h-[764px] rounded-[20px] border-2 border-[#3E2790] mx-2 shadow-[0px_0px_60px_0px_#2F1D71] px-2 sm:px-8 xl:px-[50px] py-10 flex flex-col gap-[25px]"
         style={{ background: "#0D042E" }}
