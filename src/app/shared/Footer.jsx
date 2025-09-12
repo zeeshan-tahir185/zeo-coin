@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -35,8 +36,8 @@ const Footer = () => {
 
           {/* Right - Links */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 flex-1 justify-items-center md:justify-items-start">
-            <a href="#" className="hover:text-gray-400">About Us</a>
-            <a href="#" className="hover:text-gray-400">FAQ</a>
+            <a href="/#about-us" className="hover:text-gray-400">About Us</a>
+            <a href="/faq" className="hover:text-gray-400">FAQ</a>
             <a href="https://medium.com/zeosuperapp" target="_blank" className="hover:text-gray-400">Blog</a>
             <a href="https://excelli.gitbook.io/zeo" target="_blank" className="hover:text-gray-400">Whitepaper</a>
             <a href="/#contact" className="hover:text-gray-400">Contact Us</a>
@@ -47,9 +48,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 mt-10 gap-4">
           <p>© Zeo Coins 2025. All rights reserved</p>
           <div className="flex gap-3">
-            <a href="#" className="hover:text-white">Privacy Policy</a>
+            <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
             <span>|</span>
-            <a href="#" className="hover:text-white">Terms of Use</a>
+            <Link href="/terms-of-use" className="hover:text-white">Terms of Use</Link>
           </div>
         </div>
       </div>
