@@ -1,10 +1,16 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const HeroPage = () => {
+  const [showComingSoon, setShowComingSoon] = useState({
+    app1: false,
+    app2: false,
+  });
+
   return (
     <div
-      className="hero_bg w-full min-h-[100vh] md:min-h-[1200px] pt-[98px] flex flex-col gap-[20px] md:gap-[130px] justify-center items-center pb-[50px] md:pb-0"
+      className="hero_bg w-full min-h-[100vh] md:min-h-[1000px] pt-[98px] flex flex-col gap-[20px] md:gap-[130px] justify-center items-center pb-[50px] md:pb-0"
       id="home"
     >
       <div className="flex flex-col lg:flex-row gap-[50px] justify-between items-center px-[20px] lg:px-[65px] max-w-[1440px] mx-auto mt-2 md:mt-0">
@@ -24,32 +30,66 @@ const HeroPage = () => {
             <span className="prog_color"> Progressive </span>Crypto Token for AI
             Agents & Social Commerce
           </h2>
-          <Link href="https://excelli.gitbook.io/zeo" target="_blank" className="cursor-pointer">
+          <Link
+            href="https://excelli.gitbook.io/zeo"
+            target="_blank"
+            className="cursor-pointer w-full"
+          >
             <button className="cursor-pointer w-full sm:w-[186px] h-[48px] rounded-[36px] bg-white text-sm text-[#4C1F59] font-semibold">
               White Paper
             </button>
           </Link>
 
           <div className="flex items-center w-full justify-between sm:justify-start gap-[10px] sm:gap-[40px] ">
-            <img
-              src="/images/home/app1.svg"
-              className="w-[45%] sm:w-auto "
-              alt=""
-            />
-            <img
-              src="/images/home/app2.svg"
-              className="w-[45%] sm:w-auto "
-              alt=""
-            />
+            {/* Play store image */}
+            <div
+              className="relative cursor-pointer "
+              onClick={() =>
+                setShowComingSoon((prev) => ({ ...prev, app1: !prev.app1 }))
+              }
+            >
+              <img
+                src="/images/home/app1.svg"
+                className="w-full sm:w-auto"
+                alt="Play Store"
+              />
+              {showComingSoon.app1 && (
+                <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 text-white text-xl whitespace-nowrap">
+                  Coming Soon
+                </span>
+              )}
+            </div>
+
+            {/* App store image */}
+            <div
+              className="relative cursor-pointer"
+              onClick={() =>
+                setShowComingSoon((prev) => ({ ...prev, app2: !prev.app2 }))
+              }
+            >
+              <img
+                src="/images/home/app2.svg"
+                className="w-full sm:w-auto"
+                alt="App Store"
+              />
+              {showComingSoon.app2 && (
+                <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 text-white text-xl whitespace-nowrap">
+                  Coming Soon
+                </span>
+              )}
+            </div>
           </div>
         </div>
+
         <img
           src="/images/home/img1.png"
           alt=""
           className="w-[70%] lg:w-[287px] xl:mr-[100px] hidden lg:block"
         />
       </div>
-      <div className="flex justify-center items-center gap-5 lg:gap-[48px] flex-wrap">
+
+      {/* Social icons (same as before) */}
+      <div className="flex justify-center items-center gap-5 lg:gap-[48px] flex-wrap mt-3">
         <a target="_blank" href="https://x.com/ZeoSuperApp">
           <img
             src="/images/home/icon1.png"
