@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const HeroPage = () => {
@@ -23,12 +24,12 @@ const HeroPage = () => {
             <span className="prog_color"> Progressive </span>Crypto Token for AI
             Agents & Social Commerce
           </h2>
-          <button className="w-full sm:w-[186px] h-[48px] rounded-[36px] bg-white text-sm text-[#4C1F59] font-semibold">
-            <a href="https://excelli.gitbook.io/zeo" target="_blank">
-              {" "}
+          <Link href="https://excelli.gitbook.io/zeo" target="_blank" className="cursor-pointer">
+            <button className="cursor-pointer w-full sm:w-[186px] h-[48px] rounded-[36px] bg-white text-sm text-[#4C1F59] font-semibold">
               White Paper
-            </a>
-          </button>
+            </button>
+          </Link>
+
           <div className="flex items-center w-full justify-between sm:justify-start gap-[10px] sm:gap-[40px] ">
             <img
               src="/images/home/app1.svg"
