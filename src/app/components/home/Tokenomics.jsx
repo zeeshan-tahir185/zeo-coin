@@ -8,7 +8,7 @@ const Tokenomics = () => {
         <img
           src="/images/home/token_bg.svg"
           alt=""
-          className="absolute top-0 bottom-0 w-full right-0 object-cover z-30 "
+          className="absolute top-0 bottom-0 w-full right-0 object-cover z-30 2xl:hidden"
         />
       </div>
 
