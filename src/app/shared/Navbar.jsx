@@ -2,12 +2,14 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState("/");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLegalDropdownOpen, setIsLegalDropdownOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -18,6 +20,8 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    if (pathname !== "/") return; // Only set up observer on homepage
+
     const sections = [
       { id: "home", link: "/" },
       { id: "buy-coins", link: "/buy-coins" },
@@ -45,7 +49,7 @@ const Navbar = () => {
       },
       {
         root: null, // Use viewport as root
-        rootMargin: "0px 0px -50% 0px", // Adjusted to trigger when section is near the top
+        rootMargin: "0px 0px -50% 0px", // Trigger when section is near the top
         threshold: 0.2, // Trigger when 20% of the section is visible
       }
     );
@@ -68,7 +72,7 @@ const Navbar = () => {
         }
       });
     };
-  }, []);
+  }, [pathname]); // Re-run when pathname changes
 
   return (
     <nav className="bg-black text-white h-[88px] fixed top-0 left-0 right-0 w-full z-50">
