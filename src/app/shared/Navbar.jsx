@@ -1,66 +1,21 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { usePathname } from "next/navigation"; 
 
 const Navbar = () => {
-  const pathname = usePathname();
-  const currentActive =
-    pathname === "/privacy-policy" || pathname === "/terms-of-use"
-      ? "/legal"
-      : pathname;
-  const [activeLink, setActiveLink] = useState(currentActive);
+  const [activeLink, setActiveLink] = useState("/");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLegalDropdownOpen, setIsLegalDropdownOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
- useEffect(() => {
-    const newActive =
-      pathname === "/privacy-policy" || pathname === "/terms-of-use"
-        ? "/legal"
-        : pathname;
-    setActiveLink(newActive);
-  }, [pathname]);
 
   const toggleLegalDropdown = () => {
     setIsLegalDropdownOpen(!isLegalDropdownOpen);
   };
-  
-   useEffect(() => {
-    const sections = [
-      { id: "home", path: "/" },
-      { id: "buy-coins", path: "/buy-coins" },
-      { id: "referral", path: "/referral" },
-      { id: "about-us", path: "/about-us" },
-      { id: "key-features", path: "/key-features" },
-      { id: "tokenomics", path: "/tokenomics" },
-      { id: "roadmap", path: "/roadmap" },
-    ];
-
-    const handleScroll = () => {
-      let current = activeLink;
-      for (const section of sections) {
-        const element = document.getElementById(section.id);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          // Section agar thoda bhi viewport me hai
-          if (rect.top <= window.innerHeight / 2 && rect.bottom >= 100) {
-            current = section.path;
-          }
-        }
-      }
-      setActiveLink(current);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // initial load pe bhi check ho jaye
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <nav className="bg-black text-white h-[88px] fixed top-0 left-0 right-0 w-full z-50">
@@ -217,14 +172,20 @@ const Navbar = () => {
                 <Link
                   href="/privacy-policy"
                   className="block  py-2 text-sm text-center text-white"
-                  onClick={() => setActiveLink("/legal")}
+                  onClick={() => {
+                    setActiveLink("/legal")
+                    setIsLegalDropdownOpen(false)
+                  }}
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   href="/terms-of-use"
                   className="block py-2 text-sm text-center text-white"
-                  onClick={() => setActiveLink("/legal")}
+                  onClick={() => {
+                    setActiveLink("/legal")
+                    setIsLegalDropdownOpen(false)
+                  }}
                 >
                   Terms Of Use
                 </Link>
