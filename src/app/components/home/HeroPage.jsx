@@ -55,7 +55,7 @@ const HeroPage = () => {
               />
               {showComingSoon.app1 && (
                 <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 text-white text-xl whitespace-nowrap">
-                  Coming Soon
+                  Coming Soon!
                 </span>
               )}
             </div>
@@ -74,7 +74,7 @@ const HeroPage = () => {
               />
               {showComingSoon.app2 && (
                 <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 text-white text-xl whitespace-nowrap">
-                  Coming Soon
+                  Coming Soon!
                 </span>
               )}
             </div>

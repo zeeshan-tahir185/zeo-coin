@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -16,6 +16,59 @@ const Navbar = () => {
   const toggleLegalDropdown = () => {
     setIsLegalDropdownOpen(!isLegalDropdownOpen);
   };
+
+  useEffect(() => {
+    const sections = [
+      { id: "home", link: "/" },
+      { id: "buy-coins", link: "/buy-coins" },
+      { id: "referral", link: "/referral" },
+      { id: "about-us", link: "/about-us" },
+      { id: "key-features", link: "/key-features" },
+      { id: "tokenomics", link: "/tokenomics" },
+      { id: "roadmap", link: "/roadmap" },
+    ];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
+            const section = sections.find((sec) => sec.id === sectionId);
+            if (section) {
+              console.log(`Section in view: ${sectionId}, Setting activeLink to: ${section.link}`);
+              setActiveLink(section.link);
+            } else {
+              console.warn(`No matching section found for ID: ${sectionId}`);
+            }
+          }
+        });
+      },
+      {
+        root: null, // Use viewport as root
+        rootMargin: "0px 0px -50% 0px", // Adjusted to trigger when section is near the top
+        threshold: 0.2, // Trigger when 20% of the section is visible
+      }
+    );
+
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id);
+      if (element) {
+        console.log(`Observing section: ${section.id}`);
+        observer.observe(element);
+      } else {
+        console.warn(`Section with ID ${section.id} not found in DOM`);
+      }
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        const element = document.getElementById(section.id);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, []);
 
   return (
     <nav className="bg-black text-white h-[88px] fixed top-0 left-0 right-0 w-full z-50">
@@ -168,13 +221,13 @@ const Navbar = () => {
               )}
             </Link>
             {isLegalDropdownOpen && (
-              <div className="absolute top-full  bg-[#0E1D32] shadow-lg z-10 h-[100px] w-[106px] flex flex-col justify-center items-center">
+              <div className="absolute top-full bg-[#0E1D32] shadow-lg z-10 h-[100px] w-[106px] flex flex-col justify-center items-center">
                 <Link
                   href="/privacy-policy"
-                  className="block  py-2 text-sm text-center text-white"
+                  className="block py-2 text-sm text-center text-white"
                   onClick={() => {
-                    setActiveLink("/legal")
-                    setIsLegalDropdownOpen(false)
+                    setActiveLink("/legal");
+                    setIsLegalDropdownOpen(false);
                   }}
                 >
                   Privacy Policy
@@ -183,8 +236,8 @@ const Navbar = () => {
                   href="/terms-of-use"
                   className="block py-2 text-sm text-center text-white"
                   onClick={() => {
-                    setActiveLink("/legal")
-                    setIsLegalDropdownOpen(false)
+                    setActiveLink("/legal");
+                    setIsLegalDropdownOpen(false);
                   }}
                 >
                   Terms Of Use
