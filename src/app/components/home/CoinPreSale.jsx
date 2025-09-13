@@ -150,6 +150,7 @@ const CoinPreSale = () => {
           Connect wallet
         </button>
       </div>
+      <a target="_blank" className="px-2 text-white underline mt-[-25px] md:mt-[-70px] text-lg" href="https://excelli.gitbook.io/zeo/readme/how-to-refer-friends-and-earn-zeo-coins-with-our-step-by-step-guide">Learn how to refer friends and earn Zeo Coins with our step-by-step guide</a>
     </div>
   );
 };
