@@ -56,7 +56,7 @@ const ContactUs = () => {
           ></textarea>
 
           {/* Google reCAPTCHA Integration */}
-          <div className="g-recaptcha mb-6" data-sitekey="6LdgX8YrAAAAAL3fyWk5t50G5_AUpnLhvJcUQH5v" ></div>
+          <div className="g-recaptcha mb-6" data-sitekey="6Lf3bcgrAAAAAGtakeAYXUcvYdhZenBmzMCTvphF" ></div>
 
           <input type="hidden" name="_captcha" value="true" />
           <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html" />
