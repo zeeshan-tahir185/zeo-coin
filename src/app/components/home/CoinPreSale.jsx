@@ -118,7 +118,7 @@ const CoinPreSale = () => {
           Connect wallet
         </button>
       </div>
-      <a target="_blank" className="px-2 text-white underline mt-[-25px] md:mt-[-70px] text-lg" href="https://excelli.gitbook.io/zeo/readme/how-to-buy-zeo-coins-with-our-step-by-step-guide">Learn How to buy Zeo Coins with our step by step guide</a>
+      <a target="_blank" className="px-2 text-white text-center md:text-left underline mt-[-25px] md:mt-[-70px] text-sm md:text-lg" href="https://excelli.gitbook.io/zeo/readme/how-to-buy-zeo-coins-with-our-step-by-step-guide">Learn How to buy Zeo Coins with our step by step guide</a>
       <div id="referral"
         className="w-[95%] md:w-[600px] min-h-[438px]  rounded-[20px] border-2 border-[#3E2790] mx-2 shadow-[0px_0px_60px_0px_#2F1D71] px-2 sm:px-8 xl:px-[50px] py-10 flex flex-col gap-[25px]"
         style={{ background: "#0D042E" }}
@@ -150,7 +150,7 @@ const CoinPreSale = () => {
           Connect wallet
         </button>
       </div>
-      <a target="_blank" className="px-2 text-white underline mt-[-25px] md:mt-[-70px] text-lg" href="https://excelli.gitbook.io/zeo/readme/how-to-refer-friends-and-earn-zeo-coins-with-our-step-by-step-guide">Learn how to refer friends and earn Zeo Coins with our step-by-step guide</a>
+      <a target="_blank" className="px-2 text-white text-center md:text-left underline mt-[-25px] md:mt-[-70px] text-sm md:text-lg" href="https://excelli.gitbook.io/zeo/readme/how-to-refer-friends-and-earn-zeo-coins-with-our-step-by-step-guide">Learn how to refer friends and earn Zeo Coins with our step-by-step guide</a>
     </div>
   );
 };
