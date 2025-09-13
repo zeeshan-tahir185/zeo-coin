@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const CoinPreSale = () => {
@@ -28,7 +29,7 @@ const CoinPreSale = () => {
           </p>
           <p className="text-center text-sm text-[#FFFFFF] cursor-pointer">
             See rounds prices and details (
-            <span className="underline">here</span>)
+            <Link href="https://excelli.gitbook.io/zeo/readme/tokenomics" target="_blank" className="underline">here</Link>)
           </p>
         </div>
 

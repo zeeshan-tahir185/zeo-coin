@@ -1,18 +1,30 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { motion } from "framer-motion"; // Import Framer Motion for animations
+import { usePathname } from "next/navigation"; // 👈 yeh import karen
 
 const Navbar = () => {
-  const [activeLink, setActiveLink] = useState("/");
+  const pathname = usePathname();
+  const currentActive =
+    pathname === "/privacy-policy" || pathname === "/terms-of-use"
+      ? "/legal"
+      : pathname;
+  const [activeLink, setActiveLink] = useState(currentActive);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLegalDropdownOpen, setIsLegalDropdownOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+ useEffect(() => {
+    const newActive =
+      pathname === "/privacy-policy" || pathname === "/terms-of-use"
+        ? "/legal"
+        : pathname;
+    setActiveLink(newActive);
+  }, [pathname]);
 
   const toggleLegalDropdown = () => {
     setIsLegalDropdownOpen(!isLegalDropdownOpen);
@@ -162,7 +174,6 @@ const Navbar = () => {
                   ? " !font-bold text-sm xl:text-lg"
                   : "text-[#FFFFFF] text-xs xl:text-base !font-light"
               }`}
-              onClick={() => setActiveLink("/legal")}
             >
               Legal
               {activeLink === "/legal" && (
@@ -174,12 +185,14 @@ const Navbar = () => {
                 <Link
                   href="/privacy-policy"
                   className="block  py-2 text-sm text-center text-white"
+                  onClick={() => setActiveLink("/legal")}
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   href="/terms-of-use"
                   className="block py-2 text-sm text-center text-white"
+                  onClick={() => setActiveLink("/legal")}
                 >
                   Terms Of Use
                 </Link>
@@ -299,9 +312,6 @@ const Navbar = () => {
             <span
               href=""
               className="block text-base text-white py-2 px-4 hover:bg-[#D1A03E] rounded-lg transition-all"
-              onClick={() => {
-                setActiveLink("/legal");
-              }}
             >
               Legal
             </span>
@@ -309,14 +319,20 @@ const Navbar = () => {
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-black border border-blue-500 rounded-lg shadow-lg z-10">
                 <Link
                   href="/privacy-policy"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    setActiveLink("/legal");
+                    setIsMobileMenuOpen(false);
+                  }}
                   className="block px-4 py-2 text-white hover:bg-gray-700 border-b border-dashed border-blue-500"
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   href="/terms-of-use"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    setActiveLink("/legal");
+                    setIsMobileMenuOpen(false);
+                  }}
                   className="block px-4 py-2 text-white hover:bg-gray-700"
                 >
                   Terms Of Use
