@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { usePathname } from "next/navigation"; // 👈 yeh import karen
+import { usePathname } from "next/navigation"; 
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -29,6 +29,38 @@ const Navbar = () => {
   const toggleLegalDropdown = () => {
     setIsLegalDropdownOpen(!isLegalDropdownOpen);
   };
+  
+   useEffect(() => {
+    const sections = [
+      { id: "home", path: "/" },
+      { id: "buy-coins", path: "/buy-coins" },
+      { id: "referral", path: "/referral" },
+      { id: "about-us", path: "/about-us" },
+      { id: "key-features", path: "/key-features" },
+      { id: "tokenomics", path: "/tokenomics" },
+      { id: "roadmap", path: "/roadmap" },
+    ];
+
+    const handleScroll = () => {
+      let current = activeLink;
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // Section agar thoda bhi viewport me hai
+          if (rect.top <= window.innerHeight / 2 && rect.bottom >= 100) {
+            current = section.path;
+          }
+        }
+      }
+      setActiveLink(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // initial load pe bhi check ho jaye
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav className="bg-black text-white h-[88px] fixed top-0 left-0 right-0 w-full z-50">
