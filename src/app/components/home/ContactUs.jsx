@@ -13,8 +13,6 @@ const ContactUs = () => {
 
         <form
           action="https://formsubmit.co/info@zeocoins.com"
-        //   action="https://formsubmit.co/mrzeeshan185@gmail.com"
-
           method="POST"
           className=" sm:p-8 rounded-lg shadow-lg"
         >

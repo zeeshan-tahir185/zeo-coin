@@ -26,6 +26,7 @@ const Tokenomics = () => {
               exploring the world of crypto as Zeo coins are backed by
               Blockchain enabled Crypto token.
             </p>
+            <a href="https://excelli.gitbook.io/zeo/readme/tokenomics" className="text-white underline mt-[-20px] text-lg" target="_blank">Learn more about Zeo Coin Tokenomics</a>
           </div>
           <img
             src="/images/home/token_img.svg"
